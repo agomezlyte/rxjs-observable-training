@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-segment [(ngModel)]="tabId">
+        <ion-segment-button (click)="do()" *ngFor="let id of [ 0, 1 ]" [value]="id">
+            <ion-label>Tab {{ id }}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+
+
+<ion-content padding margin>
+    <ion-row *ngIf="tabId == 0">
+        <ion-col padding margin *ngFor="let i of [1,2,3,4]">
+            <img *ngIf="observable" [src]="observable | async" />
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="tabId == 1">
+        <ion-col padding margin *ngFor="let j of [1,2,3,4]">
+            <img *ngIf="observable" [src]="observable | async" />
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <input margin type="text" [(ngModel)]="textBox" />
+            <ion-button margin (click)="update()">Update image</ion-button>
+            <img *ngIf="observable" [src]="observable | async" />
+        </ion-col>
+    </ion-row>
+</ion-content>
