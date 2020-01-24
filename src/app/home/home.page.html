@@ -1,6 +1,6 @@
 <ion-header>
     <ion-segment [(ngModel)]="tabId">
-        <ion-segment-button (click)="do()" *ngFor="let id of [ 0, 1 ]" [value]="id">
+        <ion-segment-button *ngFor="let id of [ 0, 1 ]" [value]="id">
             <ion-label>Tab {{ id }}</ion-label>
         </ion-segment-button>
     </ion-segment>
@@ -23,7 +23,7 @@
         <ion-col>
             <input margin type="text" [(ngModel)]="textBox" />
             <ion-button margin (click)="update()">Update image</ion-button>
-            <img *ngIf="observable" [src]="observable | async" />
+            <!-- <img *ngIf="observable" [src]="observable | async" /> -->
         </ion-col>
     </ion-row>
 </ion-content>
