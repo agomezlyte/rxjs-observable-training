@@ -1,0 +1,13 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>observables</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div>The values from the first observables are: {{ numsObservable | async }}</div>
+	<input margin padding type="text" [(ngModel)]="textBox" />
+	<ion-button (click)="update()">New Number</ion-button>
+	<div> The value from the subject is: {{ subject | async }}</div>
+	<div>The values from the array of observables are {{ source | async }}</div>
+</ion-content>
