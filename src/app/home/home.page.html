@@ -11,19 +11,18 @@
 <ion-content padding margin>
     <ion-row *ngIf="tabId == 0">
         <ion-col padding margin *ngFor="let i of [1,2,3,4]">
-            <img *ngIf="observable" [src]="observable | async" />
+            <img class="image" *ngIf="observable" [src]="observable | async" />
         </ion-col>
     </ion-row>
     <ion-row *ngIf="tabId == 1">
         <ion-col padding margin *ngFor="let j of [1,2,3,4]">
-            <img *ngIf="observable" [src]="observable | async" />
+            <img class="image" *ngIf="observable" [src]="observable | async" />
         </ion-col>
     </ion-row>
     <ion-row>
         <ion-col>
             <input margin type="text" [(ngModel)]="textBox" />
             <ion-button margin (click)="update()">Update image</ion-button>
-            <!-- <img *ngIf="observable" [src]="observable | async" /> -->
         </ion-col>
     </ion-row>
 </ion-content>
